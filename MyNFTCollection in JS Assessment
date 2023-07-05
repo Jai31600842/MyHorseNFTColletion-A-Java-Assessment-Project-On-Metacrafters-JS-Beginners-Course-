@@ -1,0 +1,35 @@
+let nftCount = 0;
+
+function mintNFT(horsebreed, coat, horsetype ) {
+  const nft = {
+    "horsebreed": horsebreed,
+    "coat": coat,
+    "horsetype": horsetype
+  }
+
+  nftCount++;
+  return nft;
+}
+function listNFTs (nfts) {
+  for (let i = 0; i <nfts.length; i++) {
+    console.log("Horse Breed: " + nfts[i].horsebreed);
+    console.log("Coat: " + nfts[i].coat);
+    console.log("Horse Type: " + nfts[i].horsetype);
+    console.log("_________________________");
+  }
+}
+
+function getTotalSupply() {
+  console.log("Total NFTs Minted: " + nftCount);
+}
+const nft1 = mintNFT("Dutch Draft", "Bay&Gray", "Draft Horse");
+const nft2 = mintNFT("Arabian", "Roan", "Light Type Horse");
+const nft3 = mintNFT("Paso Fino", "Chesnut", "Gaited Type Horse");
+const nft4 = mintNFT("Hanoverian", "Buckskin", "Warm Blooded Horse");
+const nft5 = mintNFT("Shetland", "Silver Dapple", "Pony Horse");
+
+const nfts =[nft1, nft2, nft3, nft4, nft5];
+
+listNFTs(nfts);
+
+getTotalSupply();
